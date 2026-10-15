@@ -1,19 +1,20 @@
 {
-  "generator-ui5-app": {
+  "generator-ui5-ts-app": {
     "namespace": "pagoti.fabio.launchpad.jsx",
     "framework": "OpenUI5",
     "frameworkVersion": "1.153.0",
     "author": "Fabio Pagoti",
-    "initrepo": true,
+    "tstypes": "@openui5/types",
+    "tstypesVersion": "1.153.0",
     "appId": "pagoti.fabio.launchpad.jsx",
     "appURI": "pagoti/fabio/launchpad/jsx",
     "cdnDomain": "sdk.openui5.org",
     "defaultTheme": "sap_horizon",
-    "qunitCoverageFile": "qunit-coverage-istanbul.js",
-    "gte1_90_0": true,
     "gte1_98_0": true,
     "gte1_104_0": true,
+    "gte1_115_0": true,
     "gte1_120_0": true,
+    "gte1_142_0": true,
     "lt1_124_0": false,
     "setupCompleted": true
   }

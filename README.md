@@ -4,7 +4,9 @@ Insert the purpose of this project and some interesting info here...
 
 ## Description
 
-Insert the description here...
+This app demonstrates a TypeScript setup for developing UI5 applications. The central entry point for all information about using TypeScript with UI5 is at [https://sap.github.io/ui5-typescript](https://sap.github.io/ui5-typescript).
+
+**The template is inspired by the [`SAP-samples/ui5-typescript-helloworld`](https://github.com/SAP-samples/ui5-typescript-helloworld) project which also contains [a detailed step-by-step guide](https://github.com/SAP-samples/ui5-typescript-helloworld/blob/main/step-by-step.md). It explains how this setup is created and how all the bits and pieces fit together.**
 
 ## Requirements
 
@@ -32,6 +34,10 @@ As shown in the terminal after executing this command, the app is then running o
 
 (When using yarn, do `yarn start` instead. Also for all commands below, you can just replace `npm` by `yarn` in this case.)
 
+## Debug the App
+
+In the browser, you can directly debug the original TypeScript code, which is supplied via sourcemaps (need to be enabled in the browser's developer console if it does not work straight away). If the browser doesn't automatically jump to the TypeScript code when setting breakpoints, use e.g. `Ctrl`/`Cmd` + `P` in Chrome to open the `*.ts` file you want to debug.
+
 ## Build the App
 
 ### Unoptimized (but quick)
@@ -48,7 +54,9 @@ The result is placed into the `dist` folder. To start the generated package, jus
 npm run start:dist
 ```
 
-Note that `index.html` still loads the UI5 framework from the relative URL `resources/...`, which does not physically exist, but is only provided dynamically by the UI5 tooling. So for an actual deployment you should change this URL to either [the CDN](https://sdk.openui5.org/#/topic/2d3eb2f322ea4a82983c1c62a33ec4ae) or your local deployment of UI5.
+Note that `index.html` still loads the UI5 framework from the relative URL `resources/...`, which does not physically exist, but is only provided dynamically by the UI5 CLI. So for an actual deployment you should change this URL to either [the CDN](https://sdk.openui5.org/#/topic/2d3eb2f322ea4a82983c1c62a33ec4ae) or your local deployment of UI5.
+
+(When using yarn, do `yarn build` and `yarn start:dist` instead.)
 
 ### Optimized
 
@@ -93,7 +101,15 @@ You can manually open test pages by running `npm start` and then opening one of 
 
 ### Check the Code
 
-To lint the code, do:
+Do the following to run a TypeScript check:
+
+```sh
+npm run ts-typecheck
+```
+
+This checks the application code for any type errors (but will also complain in case of fundamental syntax issues which break the parsing).
+
+To lint the TypeScript code, do:
 
 ```sh
 npm run lint
