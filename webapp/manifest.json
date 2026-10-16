@@ -53,7 +53,9 @@
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
 					"bundleName": "pagoti.fabio.launchpad.jsx.i18n.i18n",
-					"supportedLocales": ["en", "de"],
+					"supportedLocales": [
+						"en"
+					],
 					"fallbackLocale": "en",
 					"async": true
 				}
