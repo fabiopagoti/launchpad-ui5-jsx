@@ -3,13 +3,19 @@
 		"target": "es2023",
 		"module": "es2022",
 		"moduleResolution": "bundler",
+		"jsx": "react-jsx",
+		"jsxImportSource": "ui5/community/jsx/runtime",
 		"skipLibCheck": true,
 		"allowJs": true,
 		"strict": true,
 		"strictNullChecks": false,
 		"strictPropertyInitialization": false,
 		"rootDir": "./webapp",
-		"types": ["@openui5/types", "@types/qunit"],
+		"types": [
+			"@openui5/types",
+			"@types/qunit",
+			"@ui5-community/jsx-runtime"
+		],
 		"paths": {
 			"pagoti/fabio/launchpad/jsx/*": ["./webapp/*"],
 			"unit/*": ["./webapp/test/unit/*"],

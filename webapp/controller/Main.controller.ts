@@ -8,4 +8,8 @@ export default class Main extends BaseController {
 	public sayHello(): void {
 		MessageBox.show("Hello World!");
 	}
+
+	public onPressAboutMe(): void {
+		MessageBox.show("Open About me");
+	}
 }

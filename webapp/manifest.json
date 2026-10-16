@@ -28,9 +28,9 @@
 
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "pagoti.fabio.launchpad.jsx.view.App",
-			"type": "XML",
-			"id": "app"
+			"viewName": "module:pagoti/fabio/launchpad/jsx/view/App",
+			"id": "app",
+			"async": true
 		},
 
 		"dependencies": {
@@ -64,7 +64,6 @@
 			"config": {
 				"routerClass": "sap.m.routing.Router",
 				"type": "View",
-				"viewType": "XML",
 				"path": "pagoti.fabio.launchpad.jsx.view",
 				"controlId": "app",
 				"controlAggregation": "pages"
@@ -79,7 +78,7 @@
 			"targets": {
 				"main": {
 					"id": "main",
-					"name": "Main"
+					"name": "module:pagoti/fabio/launchpad/jsx/view/Main"
 				}
 			}
 		}
