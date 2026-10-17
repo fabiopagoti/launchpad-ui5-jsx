@@ -30,7 +30,7 @@ Execute the following command to run the app locally for development in watch mo
 npm start
 ```
 
-As shown in the terminal after executing this command, the app is then running on http://localhost:8080/index.html. A browser window with this URL should automatically open.
+As shown in the terminal after executing this command, the app is then running on http://localhost:8080/index-local.html. A browser window with this URL should automatically open.
 
 (When using yarn, do `yarn start` instead. Also for all commands below, you can just replace `npm` by `yarn` in this case.)
 
@@ -54,7 +54,7 @@ The result is placed into the `dist` folder. To start the generated package, jus
 npm run start:dist
 ```
 
-Note that `index.html` still loads the UI5 framework from the relative URL `resources/...`, which does not physically exist, but is only provided dynamically by the UI5 CLI. So for an actual deployment you should change this URL to either [the CDN](https://sdk.openui5.org/#/topic/2d3eb2f322ea4a82983c1c62a33ec4ae) or your local deployment of UI5.
+Note that `index-local.html` still loads the UI5 framework from the relative URL `resources/...`, which does not physically exist, but is only provided dynamically by the UI5 CLI. So for an actual deployment you should change this URL to either [the CDN](https://sdk.openui5.org/#/topic/2d3eb2f322ea4a82983c1c62a33ec4ae) or your local deployment of UI5.
 
 (When using yarn, do `yarn build` and `yarn start:dist` instead.)
 
@@ -74,7 +74,7 @@ npm run start:dist
 
 In this case, all UI5 framework resources are also available within the `dist` folder, so the folder can be deployed as-is to any static web server, without changing the bootstrap URL.
 
-With the self-contained build, the bootstrap URL in `index.html` has already been modified to load the newly created `sap-ui-custom.js` for bootstrapping, which contains all app resources as well as all needed UI5 JavaScript resources. Most UI5 resources inside the `dist` folder are for this reason actually **not** needed to run the app. Only the non-JS-files, like translation texts and CSS files, are used and must also be deployed. (Only when for some reason JS files are missing from the optimized self-contained bundle, they are also loaded separately.)
+With the self-contained build, the bootstrap URL in `index-local.html` has already been modified to load the newly created `sap-ui-custom.js` for bootstrapping, which contains all app resources as well as all needed UI5 JavaScript resources. Most UI5 resources inside the `dist` folder are for this reason actually **not** needed to run the app. Only the non-JS-files, like translation texts and CSS files, are used and must also be deployed. (Only when for some reason JS files are missing from the optimized self-contained bundle, they are also loaded separately.)
 
 (When using yarn, do `yarn build:opt` and `yarn start:dist` instead.)
 
