@@ -10,8 +10,6 @@ import ImageContent from "sap/m/ImageContent";
 import HeroBanner from "sap/f/HeroBanner";
 import VBox from "sap/m/VBox";
 import DateTime from "sap/ui/model/type/DateTime";
-import Image from "sap/m/Image";
-import Icon from "sap/ui/core/Icon";
 import FlexBox from "sap/m/FlexBox";
 
 
@@ -52,13 +50,13 @@ export default class Main extends View {
 										</TileContent>
 									</GenericTile>
 								</FlexBox>
-							</Panel>
+							</Panel> as Control
 						}
 						</For>
 					</VBox>
 
 				</VBox>
-			</Page >
+			</Page > as Control
 		);
 	}
 }

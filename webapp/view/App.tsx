@@ -19,7 +19,7 @@ export default class AppView extends View {
 		return (
 			<App id="app" >
 
-			</App>
+			</App> as Control
 		);
 	}
 }

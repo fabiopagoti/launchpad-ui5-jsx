@@ -23,7 +23,7 @@ export default class Main extends BaseController {
 	}
 
 	public onPressTile(event: Event): void {
-		const genericTile = event.getSource() as GenericTile
+		const genericTile: GenericTile = event.getSource()
 		const appContext = genericTile.getBindingContext('flp')
 		const appData = appContext.getObject() as Tile
 		window.open(appData.targetURI, "_blank")
