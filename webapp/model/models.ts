@@ -71,9 +71,24 @@ export default {
 					title: "Social Media",
 					tiles: [
 						{
+							title: "SAP Community",
+							targetURI: "https://community.sap.com/t5/user/viewprofilepage/user-id/172350",
+							icon: "sap-icon://jam"
+						},
+						{
 							title: "Linkedin",
 							targetURI: "https://www.linkedin.com/in/fabiopagoti/",
-							icon: "sap-icon://bootstrap-icons/linkedin"
+							icon: sap.ui.require.toUrl("pagoti/fabio/launchpad/jsx/thirdparty/bootstrap-icons/icons/linkedin.svg")
+						},
+						{
+							title: "X",
+							targetURI: "http://x.com/fabiopagoti",
+							icon: sap.ui.require.toUrl("pagoti/fabio/launchpad/jsx/thirdparty/bootstrap-icons/icons/twitter-x.svg")
+						},
+						{
+							title: "Twitch",
+							targetURI: "https://www.twitch.tv/fabiopagoti",
+							icon: sap.ui.require.toUrl("pagoti/fabio/launchpad/jsx/thirdparty/bootstrap-icons/icons/twitch.svg")
 						}
 					]
 				},

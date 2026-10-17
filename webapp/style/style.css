@@ -1,0 +1,7 @@
+.flep-tile-icon .sapMImageContentImageIcon {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 1.75rem !important;
+    color: var(--sapTile_IconColor) !important;
+    padding-bottom: 0.675rem !important;
+}

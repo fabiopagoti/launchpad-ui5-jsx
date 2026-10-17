@@ -11,6 +11,8 @@ import HeroBanner from "sap/f/HeroBanner";
 import VBox from "sap/m/VBox";
 import DateTime from "sap/ui/model/type/DateTime";
 import Image from "sap/m/Image";
+import Icon from "sap/ui/core/Icon";
+import FlexBox from "sap/m/FlexBox";
 
 
 /**
@@ -42,14 +44,14 @@ export default class Main extends View {
 					</HeroBanner>
 					<VBox>
 						<For each={{ path: "flp>/groups" }}>{() =>
-							<Panel expandable={true} expanded={true} headerText="{flp>title}" content="{flp>tiles}">
-
-								<GenericTile header="{flp>title}" subheader="{flp>subTitle}" press=".onPressTile">
-									<TileContent footer="">
-										<ImageContent src="{flp>icon}" class="icon-link" />
-									</TileContent>
-								</GenericTile>
-
+							<Panel expandable={true} expanded={true} headerText="{flp>title}">
+								<FlexBox direction={"Row"} items="{ path: 'flp>tiles' , templateShareable: true}" alignItems={"Start"} >
+									<GenericTile header="{flp>title}" subheader="{flp>subTitle}" press=".onPressTile" class="sapUiSmallMarginEnd">
+										<TileContent footer="">
+											<ImageContent src="{flp>icon}" class="flep-tile-icon" />
+										</TileContent>
+									</GenericTile>
+								</FlexBox>
 							</Panel>
 						}
 						</For>

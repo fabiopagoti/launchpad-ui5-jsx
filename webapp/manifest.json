@@ -43,7 +43,16 @@
 		},
 
 		"resources": {
-			"css": []
+			"css": [
+				{
+					"id": "bootstrap-icons",
+					"uri": "thirdparty/bootstrap-icons/font/bootstrap-icons.css"
+				},
+				{
+					"id": "custom-css",
+					"uri": "style/style.css"
+				}
+			]
 		},
 		"handleValidation": true,
 

@@ -1,7 +1,6 @@
 import UIComponent from "sap/ui/core/UIComponent";
 import models from "./model/models";
 import Device from "sap/ui/Device";
-import IconPool from "sap/ui/core/IconPool";
 
 /**
  * @namespace pagoti.fabio.launchpad.jsx
@@ -17,19 +16,6 @@ export default class Component extends UIComponent {
 	public init(): void {
 		// call the base component's init function
 		super.init();
-
-		const iconsRoot = sap.ui.require.toUrl(
-			"pagoti/fabio/launchpad/jsx/thirdparty/bootstrap-icons/"
-		);
-		let metadataUrl = new URL(`${document.location.origin}/thirdparty/bootstrap-icons/font/bootstrap-icons.json`)
-		IconPool.registerFont({
-			//collectionName: "bootstrap-icons",
-			fontFamily: "bootstrap-icons",
-			fontURI: `${iconsRoot}font/`,
-			//metadata: { linkedin: "f472" },
-			metadataURI: metadataUrl,
-			lazy: true
-		});
 
 		// create the device model
 		this.setModel(models.createDeviceModel(), "device");
