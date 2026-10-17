@@ -9,6 +9,8 @@ export type Tile = {
 	title: string;
 	hasImage?: boolean;
 	imageUrl?: string;
+	targetURI?: string;
+	icon?: string
 }
 
 export type Group = {
@@ -24,9 +26,25 @@ export type FabioPad = {
 export default {
 
 	createDeviceModel: (): JSONModel => {
-		const oModel = new JSONModel(Device);
-		oModel.setDefaultBindingMode(BindingMode.OneWay);
-		return oModel;
+		const model = new JSONModel(Device);
+		model.setDefaultBindingMode(BindingMode.OneWay);
+		return model;
+	},
+
+	createGreetingModel: (): TypedJSONModel<{ now: Date, message: string }> => {
+		const data = {
+			now: new Date(),
+			message: ''
+		}
+		if (data.now.getHours() < 12 && data.now.getHours() >= 5) {
+			data.message = "Good morning"
+		} else if (data.now.getHours() < 18) {
+			data.message = "Good afternoon"
+		} else {
+			data.message = "Good evening"
+		}
+		const model = new TypedJSONModel(data)
+		return model
 	},
 
 	createFabioPadModel: (): TypedJSONModel<FabioPad> => {
@@ -41,7 +59,30 @@ export default {
 							imageUrl: ""
 						}
 					]
+				},
+
+				{
+					title: "e-Books written by me",
+					tiles: []
+
+				},
+
+				{
+					title: "Social Media",
+					tiles: [
+						{
+							title: "Linkedin",
+							targetURI: "https://www.linkedin.com/in/fabiopagoti/",
+							icon: "sap-icon://bootstrap-icons/linkedin"
+						}
+					]
+				},
+
+				{
+					title: "UI5 Apps",
+
 				}
+
 			]
 		};
 		const model = new TypedJSONModel(apps)

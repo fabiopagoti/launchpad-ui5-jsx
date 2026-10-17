@@ -5,6 +5,12 @@ import GenericTile from "sap/m/GenericTile";
 
 import Panel from "sap/m/Panel";
 import { For } from "ui5/community/jsx/runtime/runtime/runtime";
+import TileContent from "sap/m/TileContent";
+import ImageContent from "sap/m/ImageContent";
+import HeroBanner from "sap/f/HeroBanner";
+import VBox from "sap/m/VBox";
+import DateTime from "sap/ui/model/type/DateTime";
+import Image from "sap/m/Image";
 
 
 /**
@@ -23,17 +29,33 @@ export default class Main extends View {
 	createContent(): Control {
 		return (
 			<Page title="{i18n>mainPageTitle}">
-				<For each={{ path: "flp>/groups" }}>{() =>
-					<Panel headerText="{flp>title}" content="{flp>tiles}">
+				<VBox>
+					<HeroBanner
+						headerText="{greeting>/message}"
+						overlineText={{
+							path: "greeting>/now",
+							type: new DateTime(),
+							formatOptions: {
 
-						<GenericTile header="About me" press=".onPressAboutMe">
+							}
+						}} >
+					</HeroBanner>
+					<VBox>
+						<For each={{ path: "flp>/groups" }}>{() =>
+							<Panel expandable={true} expanded={true} headerText="{flp>title}" content="{flp>tiles}">
 
-						</GenericTile>
+								<GenericTile header="{flp>title}" subheader="{flp>subTitle}" press=".onPressTile">
+									<TileContent footer="">
+										<ImageContent src="{flp>icon}" class="icon-link" />
+									</TileContent>
+								</GenericTile>
 
-					</Panel>
-				}
-				</For>
+							</Panel>
+						}
+						</For>
+					</VBox>
 
+				</VBox>
 			</Page >
 		);
 	}

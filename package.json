@@ -44,6 +44,7 @@
 		"wdio-ui5-service": "^3.0.12"
 	},
 	"dependencies": {
-		"@ui5-community/jsx-runtime": "^0.1.5"
+		"@ui5-community/jsx-runtime": "^0.1.5",
+		"bootstrap-icons": "^1.13.2"
 	}
 }
